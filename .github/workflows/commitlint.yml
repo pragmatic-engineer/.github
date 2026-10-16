@@ -13,6 +13,9 @@ name: Commit Lint
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
+  # The merge queue needs this check to report on its own ref. The title was
+  # already checked on the pull request, so the step below skips here.
+  merge_group:
 
 permissions: {}
 
@@ -31,6 +34,7 @@ jobs:
             objects.githubusercontent.com:443
 
       - name: Validate PR title (Conventional Commits)
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
