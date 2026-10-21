@@ -12,6 +12,6 @@ Start with the [playbook README](https://github.com/pragmatic-engineer/playbook#
 | [.project-template](https://github.com/pragmatic-engineer/.project-template) | Template for new Rust library crates. | Use it as a GitHub template. |
 | [playbook-telemetry](https://github.com/pragmatic-engineer/playbook-telemetry) | Archived. Replaced by `pbtop` and `playbook usage`. | Not needed. |
 
-Homebrew 6.0.0 and later asks you to trust non-official taps. The fully qualified install above trusts only that formula. To use short names or trust the whole tap, see [Trust the tap](https://github.com/pragmatic-engineer/homebrew-tap#trust-the-tap).
+Homebrew 6.0.0 and later asks you to trust non-official taps. The fully qualified install above trusts only that formula. To use short names or trust the whole tap, see the [tap install notes](https://github.com/pragmatic-engineer/homebrew-tap#install).
 
 Community files for all repos live in [.github](https://github.com/pragmatic-engineer/.github): [contributing](https://github.com/pragmatic-engineer/.github/blob/main/CONTRIBUTING.md), [security](https://github.com/pragmatic-engineer/.github/blob/main/SECURITY.md) and [support](https://github.com/pragmatic-engineer/.github/blob/main/SUPPORT.md).
