@@ -2,8 +2,8 @@
 
 ## Documentation
 
-- [Playbook docs](https://github.com/pragmatic-engineer/playbook/blob/main/docs/index.md)
-- [Quick start](https://github.com/pragmatic-engineer/playbook#quick-start-1-command)
+- [Playbook docs](https://github.com/pragmatic-engineer/playbook/blob/main/docs/README.md)
+- [Playbook README](https://github.com/pragmatic-engineer/playbook#readme)
 - In a Claude Code session, run `/playbook:doctor` to check your setup.
 
 ## Questions and bugs
