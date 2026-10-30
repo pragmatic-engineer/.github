@@ -109,12 +109,21 @@ jobs:
           script: |
             const CLA_DOCS = 'https://github.com/pragmatic-engineer/playbook/blob/main/.github';
             const author = process.env.PR_AUTHOR.toLowerCase();
-            const { data: file } = await github.rest.repos.getContent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: '.github/CONTRIBUTORS.md',
-              ref: process.env.BASE_BRANCH,
-            });
+            let file;
+            try {
+              ({ data: file } = await github.rest.repos.getContent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: '.github/CONTRIBUTORS.md',
+                ref: process.env.BASE_BRANCH,
+              }));
+            } catch (err) {
+              if (err.status === 404) {
+                core.setFailed('CLA: .github/CONTRIBUTORS.md is missing on ' + process.env.BASE_BRANCH + '. Add it in a separate pull request first.');
+                return;
+              }
+              throw err;
+            }
             const content = Buffer.from(file.content, 'base64').toString('utf-8');
 
             // Parse table rows between CLA-BOT markers
